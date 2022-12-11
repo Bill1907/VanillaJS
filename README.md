@@ -1,4 +1,4 @@
-# Vanilla JS로 근본 
+# Vanilla JS로 근본 찾기
 
 1. Web Component
 
