@@ -1,4 +1,4 @@
-# Vanilla JS로 전부 다 만들어 보자
+# Vanilla JS로 근본 
 
 1. Web Component
 
