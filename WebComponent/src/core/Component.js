@@ -4,6 +4,7 @@ class Component {
   constructor($target) {
     this.$target = $target;
     this.setup();
+    this.setEvent();
     this.render();
   }
   setup() {}
@@ -12,7 +13,6 @@ class Component {
   }
   render() {
     this.$target.innerHTML = this.template();
-    this.setEvent();
   }
   setEvent() {}
   setState(newState) {

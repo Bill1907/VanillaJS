@@ -23,17 +23,17 @@ class Items extends Component {
         `;
   }
   setEvent() {
-    this.$target.querySelector(".add-btn").addEventListener("click", () => {
+    this.$target.addEventListener("click", ({ target }) => {
       const { items } = this.$state;
-      this.setState({ items: [...items, `item${items.length + 1}`] });
-    });
 
-    this.$target.querySelectorAll(".delete-btn").forEach((deleteBtn) => {
-      deleteBtn.addEventListener("click", ({ target }) => {
-        const items = [...this.$state.items];
+      if (target.classList.contains("add-btn")) {
+        this.setState({ items: [...items, `item${items.length + 1}`] });
+      }
+
+      if (target.classList.contains("delete-btn")) {
         items.splice(target.dataset.index, 1);
         this.setState({ items });
-      });
+      }
     });
   }
 }
