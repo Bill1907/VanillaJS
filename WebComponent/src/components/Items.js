@@ -23,17 +23,14 @@ class Items extends Component {
         `;
   }
   setEvent() {
-    this.$target.addEventListener("click", ({ target }) => {
+    this.addEvent("click", ".add-btn", ({ target }) => {
       const { items } = this.$state;
-
-      if (target.classList.contains("add-btn")) {
-        this.setState({ items: [...items, `item${items.length + 1}`] });
-      }
-
-      if (target.classList.contains("delete-btn")) {
-        items.splice(target.dataset.index, 1);
-        this.setState({ items });
-      }
+      this.setState({ items: [...items, `item${items.length + 1}`] });
+    });
+    this.addEvent("click", ".delete-btn", ({ target }) => {
+      const items = [...this.$state.items];
+      items.splice(target.dataset.index, 1);
+      this.setState({ items });
     });
   }
 }
