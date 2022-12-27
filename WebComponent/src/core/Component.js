@@ -1,18 +1,22 @@
 class Component {
   $target;
   $state;
-  constructor($target) {
+  $props;
+  constructor($target, $props) {
     this.$target = $target;
-    this.setup();
-    this.setEvent();
-    this.render();
+    this.$props = $props;
+    this.setup(); // data setup
+    this.setEvent(); // event bind
+    this.render(); // html render
   }
   setup() {}
+  mounted() {}
   template() {
     return "";
   }
   render() {
     this.$target.innerHTML = this.template();
+    this.mounted();
   }
   setEvent() {}
   setState(newState) {
